@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
 
 function App() {
+  console.log("rendering: App")
+  let [count, setCount] = useState(0)
+  function incrementIfEven(childCount) {
+    let isEven = 0 === childCount % 2
+    if (isEven) {
+      console.log("incrementing: App")
+      setCount(count + 1)
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <p>Even Clicks: {count}</p>
+      <Counter label="A" onIncrement={incrementIfEven} />
+      <Counter label="B" onIncrement={incrementIfEven} />
     </div>
   );
+}
+
+function Counter(props) {
+  console.log("rendering: Counter " + props.label)
+  let {label, onIncrement} = props
+  let [count, setCount] = useState(0)
+  function increment() {
+    console.log("incrementing: Counter " + props.label)
+    setCount(count + 1)
+    onIncrement(count + 1)
+  }
+  return <button onClick={increment}>{label}: {count}</button>
 }
 
 export default App;
