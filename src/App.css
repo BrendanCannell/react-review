@@ -1,7 +1,10 @@
-p, button {
+
+
+input {
   display: block;
   font-size: 2em;
-  margin: 1em;
-  padding: 1em;
-  /* text-align: center; */
+}
+
+.error {
+  color: red;
 }
