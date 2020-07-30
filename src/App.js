@@ -17,6 +17,7 @@ function App() {
   return (
     <div>
       <p>Even Clicks: {count}</p>
+      {divisible(count, 3) && <p>By 3</p>}
       <Counter label="A" onIncrement={incrementIfEven} />
       <Counter label="B" onIncrement={incrementIfEven} />
     </div>
