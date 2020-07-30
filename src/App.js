@@ -1,12 +1,15 @@
 import React, {useState} from 'react';
 import './App.css';
 
+function divisible(n, m) {
+  return 0 === n % m
+}
+
 function App() {
   console.log("rendering: App")
   let [count, setCount] = useState(0)
   function incrementIfEven(childCount) {
-    let isEven = 0 === childCount % 2
-    if (isEven) {
+    if (divisible(childCount, 2)) {
       console.log("incrementing: App")
       setCount(count + 1)
     }
