@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
 
+console.log(React.createElement('div', ))
+
 function Input(props) {
   let {type, value, saveValue} = props
-  let label = "input " + type
+  let label = "Input " + type
   console.log("render: " + label)
   let [isFocused, setIsFocused] = useState(false)
   let onFocus = () => {
@@ -18,11 +20,9 @@ function Input(props) {
     console.log(`onChange: ${label} ${event.target.value}`)
     saveValue(event.target.value)
   }
-  let style = {
-    border: `2px solid ${isFocused ? 'black' : 'gray'}`
-  }
+  let className = isFocused ? 'focused' : ''
   return (
-    <input {...{style, type, value, onFocus, onBlur, onChange}} />
+    <input {...{className, type, value, onFocus, onBlur, onChange}} />
   )
 }
 
@@ -36,7 +36,10 @@ function SignupForm() {
     : false
   return (
     <form>
-      {invalidMessage && <p className="error">{invalidMessage}</p>}
+      {
+        invalidMessage
+        && <p className="error">{invalidMessage}</p>
+      }
       <Input type="text"     value={username} saveValue={setUsername} />
       <Input type="password" value={password} saveValue={setPassword} />
     </form>

@@ -3,6 +3,15 @@
 input {
   display: block;
   font-size: 2em;
+  border: none;
+}
+
+input:not(.focused) {
+  border: 2px solid blue
+}
+
+input.focused {
+  border: 2px solid black
 }
 
 .error {
