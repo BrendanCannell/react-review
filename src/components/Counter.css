@@ -1,0 +1,66 @@
+.Counter {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding: 2em; */
+  font-size: 32px;
+  text-shadow:
+      white  1px  1px 2px
+    , white  0px  1px 2px
+    , white -1px  1px 2px
+    , white  1px  0px 2px
+    , white -1px  0px 2px
+    , white  1px -1px 2px
+    , white  0px -1px 2px
+    , white -1px -1px 2px
+    ;
+  user-select: none;
+  pointer-events: auto;
+}
+
+.CounterPair {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  pointer-events: none;
+}
+
+.CounterPair.vertical {
+  flex-direction: column;
+  height: 100%;
+}
+
+.CounterPair.horizontal {
+  flex-direction: row;
+  width: 100%;
+}
+
+.CounterPair > p {
+  font-size: 2em;
+}
+
+.CounterPair > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+}
+
+.CounterPair.vertical > div {
+  flex-direction: column;
+  height: 60%;
+}
+
+.CounterPair.horizontal > div {
+  flex-direction: row;
+  width: 60%;
+}
+
+.CounterPair > div .Lucky {
+  font-size: 2em;
+  user-select: none;
+  color: red;
+}

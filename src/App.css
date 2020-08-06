@@ -1,19 +1,37 @@
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-
-input {
+nav {
+  border-bottom: 1px solid black;
+}
+nav > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 1em;
+}
+nav > ul > * + * {
+  margin-left: 1em;
+}
+nav > ul > li {
   display: block;
-  font-size: 2em;
-  border: none;
+}
+nav > ul > li > a {
+  padding: 1em;
+  color: blue;
+  text-decoration: none;
+  border: 1px solid lightgray;
+}
+nav > ul > li > a.active {
+  background-color: lightgray;
 }
 
-input:not(.focused) {
-  border: 2px solid blue
-}
-
-input.focused {
-  border: 2px solid black
-}
-
-.error {
-  color: red;
+main {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
 }

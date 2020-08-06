@@ -1,0 +1,16 @@
+.Comparison {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+.Comparison > * {
+  width: 50%;
+  overflow: hidden;
+}
+
+.Comparison > * + * {
+  margin: 0;
+  border-left: 1px solid black;
+}
